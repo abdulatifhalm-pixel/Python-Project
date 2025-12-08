@@ -1,0 +1,6 @@
+def student(*marks, **info):
+    print("Marks:", marks)
+    print("Name:", info.get("name"))
+    print("Age:", info.get("age"))
+
+student(80, 75, 90, name="Abdul", age=21)
