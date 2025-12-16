@@ -1,0 +1,53 @@
+Code:
+
+python
+import sqlite3
+
+Connect to database (or create if it doesn't exist)
+conn = sqlite3.connect('pump_station.db')
+cursor = conn.cursor()
+
+Create table
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS pumps (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        status TEXT,
+        flow_rate REAL
+    )
+''')
+
+Insert sample data
+def add_pump(name, status, flow_rate):
+    cursor.execute('INSERT INTO pumps (name, status, flow_rate) VALUES (?, ?, ?)',
+                   (name, status, flow_rate))
+    conn.commit()
+
+View all pumps
+def view_pumps():
+    cursor.execute('SELECT * FROM pumps')
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+
+Example usage
+add_pump("Pump A", "Running", 45.7)
+add_pump("Pump B", "Stopped", 0.0)
+
+print("All Pump Data:")
+view_pumps()
+
+Close the connection
+conn.close()
+
+
+---
+
+✅ Output Example:
+
+All Pump Data:
+(1, 'Pump A', 'Running', 45.7)
+(2, 'Pump B', 'Stopped', 0.0)
+
+
+---
