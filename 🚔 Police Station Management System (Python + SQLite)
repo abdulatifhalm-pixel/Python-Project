@@ -1,0 +1,66 @@
+import sqlite3
+
+# Connect to database
+conn = sqlite3.connect("police_station.db")
+cursor = conn.cursor()
+
+# Create tables
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS officers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    rank TEXT,
+    department TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS firs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    complainant_name TEXT,
+    crime_type TEXT,
+    date TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS criminals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    crime TEXT,
+    status TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS cases (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fir_id INTEGER,
+    officer_id INTEGER,
+    case_status TEXT
+)
+""")
+
+# Function to get all police station information
+def get_all_information():
+    print("\n--- Police Officers ---")
+    for row in cursor.execute("SELECT * FROM officers"):
+        print(row)
+
+    print("\n--- FIR Records ---")
+    for row in cursor.execute("SELECT * FROM firs"):
+        print(row)
+
+    print("\n--- Criminal Records ---")
+    for row in cursor.execute("SELECT * FROM criminals"):
+        print(row)
+
+    print("\n--- Case Records ---")
+    for row in cursor.execute("SELECT * FROM cases"):
+        print(row)
+
+# Run function
+get_all_information()
+
+# Close database connection
+conn.close()
