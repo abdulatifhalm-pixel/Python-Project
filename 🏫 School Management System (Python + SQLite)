@@ -1,0 +1,128 @@
+import sqlite3
+
+# Connect to database
+conn = sqlite3.connect("school.db")
+cursor = conn.cursor()
+
+# Create tables
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    class TEXT,
+    age INTEGER
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS teachers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    subject TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS classes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_name TEXT,
+    room_number TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS results (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id INTEGER,
+    subject TEXT,
+    marks INTEGER
+)
+""")
+
+# Function to get all school information
+def get_all_information():
+    print("\n--- Students ---")
+    for row in cursor.execute("SELECT * FROM students"):
+        print(row)
+
+    print("\n--- Teachers ---")
+    for row in cursor.execute("SELECT * FROM teachers"):
+        print(row)
+
+    print("\n--- Classes ---")
+    for row in cursor.execute("SELECT * FROM classes"):
+        print(row)
+
+    print("\n--- Results ---")
+    for row in cursor.execute("SELECT * FROM results"):
+        print(row)
+
+# Run function
+get_all_information()
+
+# Close database connection
+conn.close()
+import sqlite3
+
+# Connect to database
+conn = sqlite3.connect("school.db")
+cursor = conn.cursor()
+
+# Create tables
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    class TEXT,
+    age INTEGER
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS teachers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    subject TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS classes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_name TEXT,
+    room_number TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS results (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id INTEGER,
+    subject TEXT,
+    marks INTEGER
+)
+""")
+
+# Function to get all school information
+def get_all_information():
+    print("\n--- Students ---")
+    for row in cursor.execute("SELECT * FROM students"):
+        print(row)
+
+    print("\n--- Teachers ---")
+    for row in cursor.execute("SELECT * FROM teachers"):
+        print(row)
+
+    print("\n--- Classes ---")
+    for row in cursor.execute("SELECT * FROM classes"):
+        print(row)
+
+    print("\n--- Results ---")
+    for row in cursor.execute("SELECT * FROM results"):
+        print(row)
+
+# Run function
+get_all_information()
+
+# Close database connection
+conn.close()
