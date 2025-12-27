@@ -1,0 +1,33 @@
+✅ *Top Data Analytics Interview Questions with Answers – Part 2* 🧠📊
+
+*8️⃣ What is data normalization?*  
+It’s the process of scaling data to fit within a specific range (like 0 to 1) to improve model performance or consistency in analysis.
+
+*9️⃣ What are KPIs?*  
+*Key Performance Indicators* – measurable values used to track performance against objectives (e.g., revenue, conversion rate, churn rate).
+
+*🔟 What is the difference between INNER JOIN and LEFT JOIN?*  
+- *INNER JOIN:* Returns records with matching values in both tables.  
+- *LEFT JOIN:* Returns all records from the left table and matched ones from the right (NULLs if no match).
+
+*1️⃣1️⃣ What is a dashboard in data analytics?*  
+A visual representation of key metrics and data points using charts, graphs, and KPIs to support decision-making.
+
+*1️⃣2️⃣ What are outliers and how do you handle them?*  
+Outliers are data points far from others. Handle them by:  
+- Removing  
+- Capping  
+- Using robust statistical methods  
+- Transformation (e.g., log)
+
+*1️⃣3️⃣ What is correlation analysis?*  
+It measures the relationship between two variables. Values range from -1 to 1. Closer to ±1 means stronger correlation.
+
+*1️⃣4️⃣ Difference between correlation and causation?*  
+- *Correlation:* Two variables move together.
+- *Causation:* One variable *causes* the other to change.
+
+*1️⃣5️⃣ What is data storytelling?*  
+It’s presenting insights from data in a compelling narrative using visuals, context, and recommendations.
+
+💬 *Tap ❤️ for Part 3*
