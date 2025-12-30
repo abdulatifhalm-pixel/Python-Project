@@ -1,0 +1,55 @@
+✅ *Python Coding Interview Questions with Answers – Part 10* 🐍💻
+
+1️⃣ *Move Zeros to End*  
+Move all zeros to the end while keeping order.  
+```python
+def move_zeros(lst):
+    return [x for x in lst if x != 0] + [0] * lst.count(0)
+
+print(move_zeros([0, 1, 0, 3, 12]))  # [1, 3, 12, 0, 0]
+```
+
+2️⃣ *Check Substring*  
+Check if one string exists inside another.  
+```python
+def is_substring(s, sub):
+    return sub in s
+
+print(is_substring("python interview", "interview"))  # True
+```
+
+3️⃣ *Find Min and Max*  
+Return min and max from a list.  
+```python
+def min_max(lst):
+    return min(lst), max(lst)
+
+print(min_max([4, 1, 9, 2]))  # (1, 9)
+```
+
+4️⃣ *Count Digits (No str)*  
+Count digits in a number without converting to string.  
+```python
+def count_digits(n):
+    n = abs(n)
+    count = 0
+    while n > 0:
+        n //= 10
+        count += 1
+    return count
+
+print(count_digits(12345))  # 5
+```
+
+5️⃣ *Reverse List In-Place*  
+Reverse a list without using extra space.  
+```python
+def reverse_list(lst):
+    lst.reverse()
+    return lst
+
+nums = [1, 2, 3, 4]
+print(reverse_list(nums))  # [4, 3, 2, 1]
+```
+
+💬 *Tap ❤️ for Part 11!*
