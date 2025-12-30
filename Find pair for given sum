@@ -1,0 +1,62 @@
+✅ *Python Coding Interview Questions with Answers – Part 9* 🐍💻
+
+1️⃣ *Find Pair With Given Sum*  
+Check if any two numbers add up to a target.
+```python
+def has_pair(nums, target):
+    seen = set()
+    for n in nums:
+        if target - n in seen:
+            return True
+        seen.add(n)
+    return False
+
+print(has_pair([2, 7, 11, 15], 9))  # Output: True
+```
+
+2️⃣ *Remove All Occurrences of an Element*  
+Remove a value from a list.
+```python
+def remove_all(lst, x):
+    return [i for i in lst if i != x]
+
+print(remove_all([1, 2, 3, 2, 4], 2))  # Output: [1, 3, 4]
+```
+
+3️⃣ *Find Length Without len()*  
+Get string length without using `len()`.
+```python
+def str_length(s):
+    count = 0
+    for _ in s:
+        count += 1
+    return count
+
+print(str_length("python"))  # Output: 6
+```
+
+4️⃣ *Convert List to Dictionary*  
+Convert two lists into one dictionary.
+```python
+def list_to_dict(keys, values):
+    return dict(zip(keys, values))
+
+print(list_to_dict(['a', 'b'], [1, 2]))  # Output: {'a': 1, 'b': 2}
+```
+
+5️⃣ *Find Common Prefix*  
+Find the longest common prefix in a list of strings.
+```python
+def common_prefix(strs):
+    if not strs:
+        return ""
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+    return prefix
+
+print(common_prefix(["flower", "flow", "flight"]))  # Output: fl
+```
+
+💬 *Double Tap ❤️ for Part 10*
